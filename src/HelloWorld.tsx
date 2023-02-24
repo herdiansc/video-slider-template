@@ -9,29 +9,16 @@ import {
 import {Logo} from './HelloWorld/Logo';
 import {Subtitle} from './HelloWorld/Subtitle';
 import {Title} from './HelloWorld/Title';
+import {SliderContainer} from './HelloWorld/SliderContainer';
 
 export const HelloWorld: React.FC<{
 	titleText: string;
+	subtitleText: string;
 	titleColor: string;
-}> = ({titleText, titleColor}) => {
+}> = ({titleText, subtitleText, titleColor}) => {
 	const frame = useCurrentFrame();
 	const {durationInFrames, fps} = useVideoConfig();
 
-	// Animate from 0 to 1 after 25 frames
-	const logoTranslationProgress = spring({
-		frame: frame - 25,
-		fps,
-		config: {
-			damping: 100,
-		},
-	});
-
-	// Move the logo up by 150 pixels once the transition starts
-	const logoTranslation = interpolate(
-		logoTranslationProgress,
-		[0, 1],
-		[0, -150]
-	);
 
 	// Fade out the animation at the end
 	const opacity = interpolate(
@@ -44,20 +31,17 @@ export const HelloWorld: React.FC<{
 		}
 	);
 
-	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
-		<AbsoluteFill style={{backgroundColor: 'white'}}>
+		<AbsoluteFill style={{backgroundColor: '#43A1D5'}}>
 			<AbsoluteFill style={{opacity}}>
-				<AbsoluteFill style={{transform: `translateY(${logoTranslation}px)`}}>
-					<Logo />
-				</AbsoluteFill>
-				{/* Sequences can shift the time for its children! */}
-				<Sequence from={35}>
-					<Title titleText={titleText} titleColor={titleColor} />
+				<Sequence from={0}>
+					<Title titleText={titleText} />
 				</Sequence>
-				{/* The subtitle will only enter on the 75th frame. */}
-				<Sequence from={75}>
-					<Subtitle />
+				<Sequence from={0}>
+					<SliderContainer/>
+				</Sequence>
+				<Sequence from={0}>
+					<Subtitle titleText={subtitleText}/>
 				</Sequence>
 			</AbsoluteFill>
 		</AbsoluteFill>

@@ -1,0 +1,41 @@
+{
+  "title":"Di Sini Bagian Judul",
+  "subTitle":"Sub Judul Bisa Ditulis Di Sini",
+  "contents":[
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi",
+      "image":"https://via.placeholder.com/400x400.png"
+    },
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi",
+      "image":"https://via.placeholder.com/400x400.png"
+    },
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi lebih panjang",
+      "image":"https://via.placeholder.com/400x400.png"
+    },
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi",
+      "image":"https://via.placeholder.com/400x400.png"
+    },
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi",
+      "image":"https://via.placeholder.com/400x400.png"
+    },
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi",
+      "image":"https://via.placeholder.com/400x400.png"
+    },
+    {
+      "title":"Ini konten",
+      "description":"Ini deskripsi",
+      "image":"https://via.placeholder.com/400x400.png"
+    }
+  ]
+}

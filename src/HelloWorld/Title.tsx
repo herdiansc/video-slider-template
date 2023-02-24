@@ -1,14 +1,14 @@
 import React from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY} from './constants';
+import {FONT_FAMILY, WHITE} from './constants';
 
 const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
-	fontSize: 100,
+	fontSize: 50,
 	textAlign: 'center',
 	position: 'absolute',
-	bottom: 160,
+	top: 25,
 	width: '100%',
 };
 
@@ -20,8 +20,7 @@ const word: React.CSSProperties = {
 
 export const Title: React.FC<{
 	titleText: string;
-	titleColor: string;
-}> = ({titleText, titleColor}) => {
+}> = ({titleText}) => {
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
@@ -45,7 +44,7 @@ export const Title: React.FC<{
 						key={t}
 						style={{
 							...word,
-							color: titleColor,
+							color: WHITE,
 							transform: `scale(${scale})`,
 						}}
 					>

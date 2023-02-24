@@ -1,26 +1,25 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {COLOR_1, FONT_FAMILY} from './constants';
+import {COLOR_1, WHITE, FONT_FAMILY} from './constants';
 
 const subtitle: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
-	fontSize: 40,
+	fontSize: 30,
 	textAlign: 'center',
 	position: 'absolute',
-	bottom: 140,
+	bottom: 60,
 	width: '100%',
+	color: WHITE,
 };
 
-const codeStyle: React.CSSProperties = {
-	color: COLOR_1,
-};
-
-export const Subtitle: React.FC = () => {
+export const Subtitle: React.FC<{
+	titleText: string;
+}> = ({titleText}) => {
 	const frame = useCurrentFrame();
 	const opacity = interpolate(frame, [0, 30], [0, 1]);
 	return (
 		<div style={{...subtitle, opacity}}>
-			Edit <code style={codeStyle}>src/Root.tsx</code> and save to reload.
+			{titleText}
 		</div>
 	);
 };
