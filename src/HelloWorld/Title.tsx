@@ -1,15 +1,24 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY, WHITE} from './constants';
+import {spring, useCurrentFrame, useVideoConfig, interpolate} from 'remotion';
+import {WHITE, HEIGHT_SCREEN} from './constants';
+import {fontFamily} from '../Root';
 
+// https://fonts.googleapis.com">
+// <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+// <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+const titleFontSize: number = 50;
+const titleStartPos: number = (HEIGHT_SCREEN / 2) - (titleFontSize * 3);
 const title: React.CSSProperties = {
-	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
-	fontSize: 50,
+	fontSize: titleFontSize,
 	textAlign: 'center',
 	position: 'absolute',
 	top: 25,
 	width: '100%',
+	textTransform: 'uppercase'
 };
 
 const word: React.CSSProperties = {
@@ -24,34 +33,34 @@ export const Title: React.FC<{
 	const videoConfig = useVideoConfig();
 	const frame = useCurrentFrame();
 
-	const words = titleText.split(' ');
-
+	const scale = spring({
+		fps: videoConfig.fps,
+		frame: frame - 5,
+		config: {
+			damping: 200,
+		},
+	});
+	const titleToTop = interpolate(
+		frame,
+		[0, 2000],
+		[titleStartPos, 10]
+	);
 	return (
-		<h1 style={title}>
-			{words.map((t, i) => {
-				const delay = i * 5;
-
-				const scale = spring({
-					fps: videoConfig.fps,
-					frame: frame - delay,
-					config: {
-						damping: 200,
-					},
-				});
-
-				return (
-					<span
-						key={t}
-						style={{
-							...word,
-							color: WHITE,
-							transform: `scale(${scale})`,
-						}}
-					>
-						{t}
-					</span>
-				);
-			})}
+		<h1 style={{...title, fontFamily}}>
+			<span
+				key={titleText}
+				style={{
+					...word,
+					color: WHITE,
+					backgroundColor: '#333',
+					padding: 10,
+					transform: `scale(${scale})`,
+					// transform: `scale(${scale}) translateY(${titleToTop})`,
+					// transform: `translateX(100px) scale(2)`,
+				}}
+			>
+				{titleText}
+			</span>
 		</h1>
 	);
 };

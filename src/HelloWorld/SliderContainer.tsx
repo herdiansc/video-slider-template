@@ -1,6 +1,6 @@
 import React from 'react';
-import {interpolate, useCurrentFrame, Img} from 'remotion';
-import {COLOR_1, WHITE, FONT_FAMILY, DURATION_VIDEO, WIDTH_SCREEN} from './constants';
+import {interpolate, useCurrentFrame, Img, useVideoConfig} from 'remotion';
+import {WHITE, WIDTH_SCREEN, FPS_PER_CARD, FPS} from './constants';
 import data from '../data.json';
 import {DURATION} from '../Root';
 
@@ -10,7 +10,7 @@ const subtitle: React.CSSProperties = {
   left: 0,
 	width: '100%',
   height: '70%',
-  backgroundColor: WHITE,
+//   backgroundColor: WHITE,
 };
 
 const sliderA: React.CSSProperties = {
@@ -21,14 +21,15 @@ const sliderA: React.CSSProperties = {
 };
 
 const div1: React.CSSProperties = {
-	borderColor: '#ddd',
-	border: '1px solid #B4E4FF',
+	// border: 0,
+	border: 'none',
 	width: 450,
 	height: 720,
 	display: 'inline-block',
 	marginRight: 50,
 	padding: 15,
 	position: 'relative',
+	backgroundColor: WHITE,
 }
 
 export const SliderContainer: React.FC = () => {
@@ -38,8 +39,8 @@ export const SliderContainer: React.FC = () => {
 	const to = (WIDTH_SCREEN - ((450+50)*data.contents.length))
 	const logoTranslation = interpolate(
 		frame,
-		[0, DURATION],
-		[0, to]
+		[0, DURATION-FPS*6],
+		[WIDTH_SCREEN, to]
 	);
 
 	return (
@@ -48,30 +49,32 @@ export const SliderContainer: React.FC = () => {
 				{data.contents.map((k, i)=>(
 					<div style={{...div1}}>
 						<div style={{
-							fontSize: 40,
+							fontSize: 50,
 							display: 'flex',
 							justifyContent: 'center',
 							color: '#00425A',
 						}}
-						>{k.title} {i+1}</div>
+						>#{data.contents.length - i}. {k.title}</div>
 
 						<div style={{
 							textAlign: 'center',
 							marginTop: 50,
 						}}>
-							<Img src={k.image} />
+							<Img style={{
+								width:'400px',
+								height:'400px',
+							}} src={k.image} />
 						</div>
 
 						<div style={{
-							// border: '1px solid #B4E4FF',
 							width: '420px',
-							fontSize: 25,
+							fontSize: 35,
 							textAlign: 'center',
 							color: '#333',
 							position: 'absolute',
 							bottom: 45,
 						}}
-						>{k.description} {i+1}</div>
+						>{k.description}</div>
 					</div>
 				))}
 			</div>

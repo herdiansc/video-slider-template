@@ -1,12 +1,11 @@
 import {Composition} from 'remotion';
 import {HelloWorld} from './HelloWorld';
-import {Logo} from './HelloWorld/Logo';
-import {DURATION_VIDEO, FPS, WIDTH_SCREEN} from './HelloWorld/constants';
+import {FPS, FPS_PER_CARD, WIDTH_SCREEN} from './HelloWorld/constants';
 import data from './data.json';
+import { loadFont } from "@remotion/google-fonts/Roboto";
+export const { fontFamily } = loadFont(); // "Titan One"
 
-export const DURATION = data.contents.length * 150;
-
-// Each <Composition> is an entry in the sidebar!
+export const DURATION = data.contents.length * FPS_PER_CARD;
 
 export const RemotionRoot: React.FC = () => {
 	return (

@@ -1,41 +1,81 @@
 {
-  "title":"Di Sini Bagian Judul",
-  "subTitle":"Sub Judul Bisa Ditulis Di Sini",
+  "title":"Most Loved Programming Language",
+  "subTitle":"Based on stackoverflow survey 2022",
   "contents":[
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"Solidity",
+      "description":"62.08%",
+      "image":"https://www.logo.wine/a/logo/Solidity/Solidity-Logo.wine.svg"
     },
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"HTML/CSS",
+      "description":"62.09%",
+      "image":"https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_960_720.png"
     },
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi lebih panjang",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"Dart",
+      "description":"62.16%",
+      "image":"https://abrudz.github.io/logos/Dart.svg"
     },
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"Swift",
+      "description":"62.08%",
+      "image":"https://abrudz.github.io/logos/Swift.svg"
     },
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"Kotlin",
+      "description":"63.29%",
+      "image":"https://abrudz.github.io/logos/Kotlin.svg"
     },
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"C#",
+      "description":"63.39%",
+      "image":"https://abrudz.github.io/logos/CSharp.svg"
     },
     {
-      "title":"Ini konten",
-      "description":"Ini deskripsi",
-      "image":"https://via.placeholder.com/400x400.png"
+      "title":"SQL",
+      "description":"64.25%",
+      "image":"https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-part-azure-sql-database-with-azure-active-directory-17.png"
+    },
+    {
+      "title":"Go",
+      "description":"64.58%",
+      "image":"https://abrudz.github.io/logos/Go.svg"
+    },
+    {
+      "title":"Delphi",
+      "description":"65.51%",
+      "image":"https://abrudz.github.io/logos/Delphi.png"
+    },
+    {
+      "title":"Python",
+      "description":"67.34%",
+      "image":"https://abrudz.github.io/logos/Python.svg"
+    },
+    {
+      "title":"Julia",
+      "description":"72.51%",
+      "image":"https://abrudz.github.io/logos/Julia.svg"
+    },
+    {
+      "title":"TypeScript",
+      "description":"73.46%",
+      "image":"https://abrudz.github.io/logos/TypeScript.svg"
+    },
+    {
+      "title":"Clojure",
+      "description":"75.23%",
+      "image":"https://abrudz.github.io/logos/Clojure.svg"
+    },
+    {
+      "title":"Elixir",
+      "description":"75.46%",
+      "image":"https://abrudz.github.io/logos/Elixir.png"
+    },
+    {
+      "title":"Rust",
+      "description":"86.73%",
+      "image":"https://abrudz.github.io/logos/Rust.svg"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {COLOR_1, WHITE, FONT_FAMILY} from './constants';
+import {WHITE, FONT_FAMILY} from './constants';
+import {fontFamily} from '../Root';
 
 const subtitle: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
@@ -16,9 +17,9 @@ export const Subtitle: React.FC<{
 	titleText: string;
 }> = ({titleText}) => {
 	const frame = useCurrentFrame();
-	const opacity = interpolate(frame, [0, 30], [0, 1]);
+	const opacity = interpolate(frame, [120, 240], [0, 1]);
 	return (
-		<div style={{...subtitle, opacity}}>
+		<div style={{...subtitle, opacity, fontFamily}}>
 			{titleText}
 		</div>
 	);
